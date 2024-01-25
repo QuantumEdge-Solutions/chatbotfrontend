@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+
+/*Wrapper*/
+
+.podium-chatbot-wrapper {
+  z-index: 2147483647;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*ChatBox*/
+
+.podium-chat-box {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+  background: #000000;
+}
+
+.podium-chat-box-hidden {
+  display: none;
+}
+
+/*Chatbot header*/
+.podium-chat-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 12px;
+  color: #fff;
+}
+
+.podium-chatbot-name {
+  margin: 0;
+  padding: 1px;
+}
+
+.podium-chatbot-status {
+  float: right;
+  padding: 4px;
+}
+
+.podium-chatbot-status span {
+  margin-left: 4px;
+}
+
+.podium-chatbot-status-online {
+  color: lawngreen;
+}
+
+.podium-chatbot-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  float: left;
+}
+
+.podium-chat-button-header {
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: inherit;
+  padding: 5px 9px;
+  margin-left: 5px;
+}
+
+.podium-chat-button:focus {
+  border: 2px solid white;
+}
+
+.podium-chat-box-container {
+  flex: 1;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 5px;
+  padding: 1rem
+}
+
+/*Chat message*/
+
+.podium-chat-message {
+  display: block;
+  width: auto;
+  margin: 5px;
+  align-self: flex-start;
+  flex-direction: row;
+  max-width: 80%;
+  word-wrap: break-word;
+  padding: 1rem !important;
+}
+
+.podium-chat-message-text {
+  font-size: 16px;
+}
+
+/*Sent message style*/
+.podium-sent-message-container {
+  display: flex;
+  justify-content: end;
+}
+
+.podium-chat-message-sent {
+  align-self: flex-end;
+  border-radius: 20px 20px 0;
+  background-color: #e4e4e4;
+}
+
+
+.podium-chat-message-sent .podium-chat-message-text {
+  color: #000000;
+}
+
+/**
+Received message style
+ */
+
+.podium-received-message-container {
+  display: flex;
+  align-items: end;
+}
+
+.podium-chat-message-received {
+  border-radius: 20px 20px 20px 0;
+  background-color: #000000;
+
+  //margin-left: 25px;
+}
+
+.podium-chat-message-received .podium-chat-message-text {
+  color: #ffffff;
+  a {
+    color: #38B6FF !important;
+  }
+}
+
+.podium-chat-message-received .podium-chat-message-from-avatar {
+  //position: absolute;
+  //left: 0;
+  //top: 0;
+  //transform: translate(-35px, 100%);
+  //bottom: -15px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .podium-chatbot-wrapper {
+    top: auto;
+    right: 0;
+    width: 300px;
+  }
+  .podium-chat-button {
+    display: block;
+  }
+  .podium-chat-button-header {
+    display: none;
+  }
+  .podium-chat-box {
+    top: auto;
+    left: auto;
+    bottom: 100px;
+    right: 40px;
+    height: 60vh;
+    width: 300px;
+    border-radius: 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .podium-chat-box {
+    height: 70vh;
+  }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .podium-chat-box {
+    height: 80vh;
+    width: 400px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .podium-chat-box {
+    /*height: 80vh;*/
+  }
+}
+
+
+/* Footer Area*/
+
+.podium-chat-box-footer {
+  color: #fff;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.podium-chat-input-text {
+  padding-left: 10px;
+  height: 25px;
+  width: 80%;
+  border: 0;
+  resize: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  font-size: 14px;
+  background-color: inherit;
+  color: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.podium-chat-input-text::-webkit-input-placeholder {
+  color: inherit;
+}
+
+.podium-chat-input-text::-moz-placeholder {
+  color: inherit;
+}
+
+.podium-chat-input-text::-ms-input-placeholder {
+  color: inherit;
+}
+
+.podium-chat-submit {
+  cursor: pointer;
+  background-color: inherit;
+  color: inherit;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  margin-right: 10px;
+}
+
+
+/*Chat Button*/
+.podium-chat-button {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+  background: #000000;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+

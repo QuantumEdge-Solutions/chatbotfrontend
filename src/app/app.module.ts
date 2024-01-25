@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {ChatWidgetComponent} from "./chat-widget/chat-widget.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChatWidgetComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

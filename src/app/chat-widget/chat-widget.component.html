@@ -1,0 +1,58 @@
+<div class="podium-chatbot-wrapper">
+  <div class="podium-chat-box" *ngIf="showChatWidget">
+    <div class="podium-chat-box-header">
+      <h3 class="podium-chatbot-name">
+        {{widgetConfig.name}}
+      </h3>
+      <div class="podium-chatbot-status">
+        Online
+        <span class="podium-chatbot-status-online">●</span>
+        <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>
+      </div>
+    </div>
+    <div class="podium-chat-box-container" id="podium-chat-scrollable-container">
+      <div class="chat-message-bottom" #bottom></div>
+      <ng-container *ngFor="let message of messages">
+        <div [class.podium-received-message-container]="message.type === 'received'"
+             [class.podium-sent-message-container]="message.type === 'sent'">
+          <img *ngIf="message.type === 'received'"
+               [attr.src]="widgetConfig.logo" class="podium-chatbot-avatar podium-chat-message-from-avatar"
+          >
+          <div class="podium-chat-message" [class.podium-chat-message-received]="message.type === 'received'"
+               [class.podium-chat-message-sent]="message.type === 'sent'">
+            <img *ngIf="message.text==='...'" src="assets/typing.gif" alt="Typing" height="30">
+            <div *ngIf="message.text!=='...'" class="podium-chat-message-text" [innerHTML]="message.text">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="css-0">
+           <div class="css-j7qwjs">
+             <div class="css-1xhj18k">
+               <div class="css-17xejub"></div>
+               <div class="chakra-stack css-1i2407o">
+                 <div class="css-l9b527"><span class="css-1kxrhf3">helldsahhhhhhhhhhhhhhh hjadsdhsa dhabdsjsa dhb daso</span></div>
+               </div>
+             </div>
+           </div>
+         </div>-->
+      </ng-container>
+    </div>
+    <div class="podium-chat-box-footer">
+      <input type="text" class="podium-chat-input-text" placeholder="Type message..." #message
+             (keyup.enter)="sendMessage(message.value, message)">
+      <span class="podium-chat-submit" (click)="sendMessage(message.value, message)">
+        Send
+      </span>
+    </div>
+  </div>
+  <button class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
+    <span *ngIf="showChatWidget">✕</span>
+    <span *ngIf="!showChatWidget">?</span>
+  </button>
+  <!-- <img [attr.src]="widgetConfig.logo" class="avatar" style="border-radius: 50%" />-->
+</div>
+<!--
+
+<iframe src="https://chatfast.io/chat/7bf534cf-be04-4766-9763-cd6dfd6c66ba"
+        style="z-index: 999;position: fixed;bottom: 100px;right: 20px;width: 450px;height: 600px;max-width: 90vw;max-height: 65vh;border: none;display: block;border-radius: 10px;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;opacity: 1;transition: opacity 0.2s ease-in-out 0s;user-select: none;"></iframe>
+-->
