@@ -1,13 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HttpClient} from '@angular/common/http';
 
 
 @Component({
   selector: 'app-chat-widget',
   standalone: true,
   imports: [CommonModule],
-  providers: [HttpClient],
   templateUrl: './chat-widget.component.html',
   styleUrls: ['./chat-widget.component.scss']
 })
@@ -17,10 +15,6 @@ export class ChatWidgetComponent implements OnInit {
   showChatWidget = false;
   messages: any[] = [];
   processingAnswer = false;
-
-  constructor(private httpClient: HttpClient) {
-    // Initialize your component, if needed
-  }
 
   ngOnInit(): void {
     this.getConfig();
@@ -109,28 +103,5 @@ export class ChatWidgetComponent implements OnInit {
     if (scrollableDiv) {
       scrollableDiv.scrollTop = scrollableDiv.scrollHeight + 10;
     }
-  }
-
-  makeHttpRequest(url: string) {
-    this.processingAnswer = true;
-
-    this.httpClient.get(url, {observe: 'events', responseType: 'text'}).subscribe(
-      (event: any) => {
-        console.log('event', event?.body);
-        console.log('type', event?.type);
-        if (event.type === 4) { // 4 corresponds to the 'response' event in Angular
-          console.log('Request is closed.');
-          this.processingAnswer = false;
-          // Handle the response
-          this.updateAnswer(event);
-        } else {
-          console.log('else');
-        }
-      },
-      error => {
-        console.error('Error occurred:', error);
-        this.processingAnswer = false;
-      }
-    );
   }
 }
