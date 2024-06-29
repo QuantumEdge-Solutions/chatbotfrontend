@@ -1,5 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 a{
   color: #38B6FF !important;;
 }
+
+
+
+// ASK AL
+/*
+<style>
+ #textarea_comp-lq802hbq1{
+   padding-right: 35px !important;
+ }
+textarea#textarea_comp-lq802hbq1::-webkit-scrollbar {
+  width: 0px;
+  border-radius: 10px;
+
+}
+textarea#textarea_comp-lq802hbq1::-webkit-scrollbar-track,
+.scroll-host::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+textarea#textarea_comp-lq802hbq1::-webkit-scrollbar-thumb,
+.scroll-host::-webkit-scrollbar-thumb {
+  background: #E8E6E6;
+  border-radius: 10px;
+}
+
+textarea#textarea_comp-lq802hbq1::placeholder{
+  text-align: center;
+}
+.W1r_9e{
+  justify-content: center !important;
+}
+.kXzxyX {
+  background: #000000 !important;
+}
+.X5qLpZ, .BhGKej, .O5RCw_, .tn8OAL, .tWZpLv, .dfYrF5 {
+  color: #ffffff !important;
+}
+.sM_Q7p .M3I7Z2, .H5iIYa .M3I7Z2, .KvoMHf{
+  color: #ffffff !important;
+}
+.kuTaGy:hover .M3I7Z2 {
+  color: #000000 !important;
+}
+
+.dkeRPE svg{
+  fill: #ffffff !important;
+}
+._g2s8t {
+  display: none !important;
+}
+#comp-lq802hbk1-pinned-layer {
+  z-index: unset !important;
+  --above-all-in-container: unset !important;
+}
+.wixui-rich-text{
+  word-break: break-word;
+}
+.ask-al-response a {
+  color: #38B6FF !important;
+}
+
+.ask-al-table {
+  overflow-x: auto;
+}
+
+.ask-al-table table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ask-al-table th {
+  color: #ffffff;
+  text-align: left;
+  padding: 8px;
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.ask-al-table td {
+  color: #ffffff;
+  text-align: left;
+  padding: 8px;
+  min-width: 30px;
+}
+.ask-al-table tr:nth-child(even) {
+  background-color: #191a1a;
+}
+</style>*/

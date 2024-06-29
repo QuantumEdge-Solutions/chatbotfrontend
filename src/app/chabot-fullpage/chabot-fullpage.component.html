@@ -1,15 +1,16 @@
-<div class="podium-chat-box" *ngIf="showChatWidget">
-  <div class="podium-chat-box-header">
+<div *ngIf="showChatWidget" class="podium-chatbot">
+  <div class="podium-chatbot-header">
     <h3 class="podium-chatbot-name">
       {{widgetConfig.name}}
     </h3>
     <div class="podium-chatbot-status">
       Online
       <span class="podium-chatbot-status-online">●</span>
-      <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>
+<!--      <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>-->
     </div>
   </div>
-  <div class="podium-chat-box-container" id="podium-chat-scrollable-container">
+
+  <div class="podium-chatbot-chat" id="podium-chat-scrollable-container">
     <div class="chat-message-bottom" #bottom></div>
     <ng-container *ngFor="let message of messages">
       <div [class.podium-received-message-container]="message.type === 'received'"
@@ -36,7 +37,9 @@
        </div>-->
     </ng-container>
   </div>
-  <div class="podium-chat-box-footer">
+
+  <!--Footer-->
+  <div class="podium-chatbot-footer">
     <input type="text" class="podium-chat-input-text" placeholder="Type message..." #message
            (keyup.enter)="sendMessage(message.value, message)">
     <span class="podium-chat-submit" (click)="sendMessage(message.value, message)">
@@ -44,13 +47,8 @@
       </span>
   </div>
 </div>
+
 <button class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
 </button>
-
-<!--
-
-<iframe src="https://chatfast.io/chat/7bf534cf-be04-4766-9763-cd6dfd6c66ba"
-        style="z-index: 999;position: fixed;bottom: 100px;right: 20px;width: 450px;height: 600px;max-width: 90vw;max-height: 65vh;border: none;display: block;border-radius: 10px;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;opacity: 1;transition: opacity 0.2s ease-in-out 0s;user-select: none;"></iframe>
--->
