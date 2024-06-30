@@ -208,6 +208,9 @@ Received message style
   width: 60px;
   height: 60px;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
   right: 2px;
   background: #bd24fa;
