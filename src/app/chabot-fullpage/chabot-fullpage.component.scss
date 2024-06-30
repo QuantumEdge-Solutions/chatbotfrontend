@@ -28,7 +28,7 @@
 
 .podium-chatbot-status {
   float: right;
-  padding: 4px;
+  // padding: 4px;
 }
 
 .podium-chatbot-status span {
@@ -50,7 +50,9 @@
   font-weight: bold;
   color: #fff;
   border: 1px solid #fff;
+  border-radius: 50%;
   background-color: inherit;
+  cursor: pointer;
   padding: 5px 9px;
   margin-left: 5px;
 }
@@ -68,10 +70,12 @@
   max-height: calc(100vh - 160px);
   flex: 1;
   background: #ffffff;
+  border:1px solid#bd24fa;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 1rem
+  padding: 1rem;
+  box-shadow: -10px 0 10px -5px rgba(189, 36, 250, 0.3), 10px 0 10px -5px rgba(189, 36, 250, 0.3); /* Left and right shadow */
 }
 
 /*Chat message*/

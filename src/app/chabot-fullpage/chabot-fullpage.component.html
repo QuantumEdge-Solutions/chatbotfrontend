@@ -4,9 +4,9 @@
       {{widgetConfig.name}}
     </h3>
     <div class="podium-chatbot-status">
-      Online
-      <span class="podium-chatbot-status-online">●</span>
-<!--      <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>-->
+      <!-- Online
+      <span class="podium-chatbot-status-online">●</span> -->
+     <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<button class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
+<button *ngIf="!showChatWidget" class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
 </button>
