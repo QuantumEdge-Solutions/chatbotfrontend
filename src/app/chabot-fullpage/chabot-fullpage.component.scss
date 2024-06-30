@@ -8,7 +8,7 @@
 /*Header*/
 
 .podium-chatbot-header {
-  background-color: #000000;
+  background-color: #bd24fa;
   color: #fff;
   position: fixed;
   top: 0;
@@ -105,7 +105,7 @@
 
 
 .podium-chat-message-sent .podium-chat-message-text {
-  color: #000000;
+  color: #bd24fa;
 }
 
 /**
@@ -119,7 +119,7 @@ Received message style
 
 .podium-chat-message-received {
   border-radius: 20px 20px 20px 0;
-  background-color: #000000;
+  background-color: #bd24fa;
 
   //margin-left: 25px;
 }
@@ -145,7 +145,7 @@ Received message style
 /*Footer area*/
 
 .podium-chatbot-footer {
-  background-color: #000000;
+  background-color: #bd24fa;
   height: 50px;
   color: #fff;
   padding: 10px 20px 10px 10px;
@@ -204,12 +204,11 @@ Received message style
   width: 60px;
   height: 60px;
   position: fixed;
-  bottom: 30px;
-  right: 40px;
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
-  background: #000000;
+  bottom: 0;
+  right: 2px;
+  background: #bd24fa;
   border-radius: 50%;
-  border: none;
+  border: none !important;
   outline: none;
   color: #fff;
   font-size: 32px;
