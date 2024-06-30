@@ -53,7 +53,7 @@ export class ChabotFullpageComponent implements OnInit {
     };
     const that = this;
     const xmlhttp = new XMLHttpRequest();
-    const baseUrl = 'https://ask-al-staging.brownleefitness.com/answer_chunked/';
+    const baseUrl = 'https://ask-al-staging.brownleefitness.com/answer_chunked/'; //REplace with our backend url
 
     // Ensure question and loggedInUser are properly sanitized and validated
     const encodedQuestion = encodeURIComponent(question);
