@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chabot-fullpage',
@@ -7,21 +7,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ChabotFullpageComponent implements OnInit {
 
-  widgetConfig: any;
+  widgetConfig: { name: string, logo: string, primaryColor: string } = {
+    name: 'Quantum Bot',
+    logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
+    primaryColor: '#bd24fa'
+  }; // Default config
   showChatWidget = false;
   messages: any[] = [];
   processingAnswer = false;
 
   ngOnInit(): void {
-    this.getConfig();
+    // pass the client here: get it from queryparam
+    this.getClientConfig('quantum-edge');
   }
 
-  getConfig() {
-    this.widgetConfig = {
-      name: 'AI Bot',
-      logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
-    }
-  }
 
   sendMessage(question: any, event: any) {
     if (this.processingAnswer) {
@@ -100,5 +99,19 @@ export class ChabotFullpageComponent implements OnInit {
       scrollableDiv.scrollTop = scrollableDiv.scrollHeight + 10;
     }
   }
+
+  getClientConfig(client: string) {
+    // get client config from backend
+
+    if (client === 'quantum-edge') {
+      this.widgetConfig = {
+        name: 'Quantum Bot',
+        logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
+        primaryColor: '#bd24fa'
+      }
+    }
+    // Add other clients config here
+  }
+
 }
 
