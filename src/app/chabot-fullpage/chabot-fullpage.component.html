@@ -20,7 +20,7 @@
         >
         <div class="quantum-chat-message" [class.quantum-chat-message-received]="message.type === 'received'"
              [class.quantum-chat-message-sent]="message.type === 'sent'">
-          <img *ngIf="message.text==='...'" src="assets/typing.gif" alt="Typing" height="30">
+          <img *ngIf="message.text==='...'" src="assets/typing.gif" alt="Typing" height="20">
           <div *ngIf="message.text!=='...'" class="quantum-chat-message-text" [innerHTML]="message.text">
           </div>
         </div>
