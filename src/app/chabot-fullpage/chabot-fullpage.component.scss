@@ -1,4 +1,4 @@
-.podium-chatbot {
+.quantum-chatbot {
   display: flex;
   flex-direction: column !important;
   width: 100%;
@@ -7,7 +7,7 @@
 
 /*Header*/
 
-.podium-chatbot-header {
+.quantum-chatbot-header {
   background-color: #bd24fa;
   color: #fff;
   position: fixed;
@@ -21,32 +21,32 @@
   padding: 15px 12px;
 }
 
-.podium-chatbot-name {
+.quantum-chatbot-name {
   margin: 0;
   padding: 1px;
 }
 
-.podium-chatbot-status {
+.quantum-chatbot-status {
   float: right;
   // padding: 4px;
 }
 
-.podium-chatbot-status span {
+.quantum-chatbot-status span {
   margin-left: 4px;
 }
 
-.podium-chatbot-status-online {
+.quantum-chatbot-status-online {
   color: lawngreen;
 }
 
-.podium-chatbot-avatar {
+.quantum-chatbot-avatar {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   float: left;
 }
 
-.podium-chat-button-header {
+.quantum-chat-button-header {
   font-weight: bold;
   color: #fff;
   border: 1px solid #fff;
@@ -57,13 +57,13 @@
   margin-left: 5px;
 }
 
-.podium-chat-button:focus {
+.quantum-chat-button:focus {
   border: 2px solid white;
 }
 
 /*Chat Area*/
 
-.podium-chatbot-chat {
+.quantum-chatbot-chat {
   margin-top: 57px; /* Adjust according to the height of your header */
   margin-bottom: 60px; /* Adjust according to the height of your footer */
   overflow-y: auto;
@@ -80,7 +80,7 @@
 
 /*Chat message*/
 
-.podium-chat-message {
+.quantum-chat-message {
   display: block;
   width: auto;
   margin: 5px;
@@ -91,24 +91,24 @@
   padding: 1rem !important;
 }
 
-.podium-chat-message-text {
+.quantum-chat-message-text {
   font-size: 16px;
 }
 
 /*Sent message style*/
-.podium-sent-message-container {
+.quantum-sent-message-container {
   display: flex;
   justify-content: end;
 }
 
-.podium-chat-message-sent {
+.quantum-chat-message-sent {
   align-self: flex-end;
   border-radius: 20px 20px 0;
   background-color: #e4e4e4;
 }
 
 
-.podium-chat-message-sent .podium-chat-message-text {
+.quantum-chat-message-sent .quantum-chat-message-text {
   color: #bd24fa;
 }
 
@@ -116,26 +116,26 @@
 Received message style
  */
 
-.podium-received-message-container {
+.quantum-received-message-container {
   display: flex;
   align-items: end;
 }
 
-.podium-chat-message-received {
+.quantum-chat-message-received {
   border-radius: 20px 20px 20px 0;
   background-color: #bd24fa;
 
   //margin-left: 25px;
 }
 
-.podium-chat-message-received .podium-chat-message-text {
+.quantum-chat-message-received .quantum-chat-message-text {
   color: #ffffff;
   a {
     color: #38B6FF !important;
   }
 }
 
-.podium-chat-message-received .podium-chat-message-from-avatar {
+.quantum-chat-message-received .quantum-chat-message-from-avatar {
   //position: absolute;
   //left: 0;
   //top: 0;
@@ -148,7 +148,7 @@ Received message style
 
 /*Footer area*/
 
-.podium-chatbot-footer {
+.quantum-chatbot-footer {
   background-color: #bd24fa;
   height: 50px;
   color: #fff;
@@ -163,7 +163,7 @@ Received message style
   align-items: center;
 }
 
-.podium-chat-input-text {
+.quantum-chat-input-text {
   padding-left: 10px;
   height: 25px;
   width: 90%;
@@ -180,19 +180,19 @@ Received message style
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-.podium-chat-input-text::-webkit-input-placeholder {
+.quantum-chat-input-text::-webkit-input-placeholder {
   color: inherit;
 }
 
-.podium-chat-input-text::-moz-placeholder {
+.quantum-chat-input-text::-moz-placeholder {
   color: inherit;
 }
 
-.podium-chat-input-text::-ms-input-placeholder {
+.quantum-chat-input-text::-ms-input-placeholder {
   color: inherit;
 }
 
-.podium-chat-submit {
+.quantum-chat-submit {
   cursor: pointer;
   background-color: inherit;
   color: inherit;
@@ -204,7 +204,7 @@ Received message style
 
 
 /*Chat Button*/
-.podium-chat-button {
+.quantum-chat-button {
   width: 60px;
   height: 60px;
   position: fixed;

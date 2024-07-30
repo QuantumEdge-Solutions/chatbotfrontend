@@ -1,27 +1,27 @@
-<div *ngIf="showChatWidget" class="podium-chatbot">
-  <div class="podium-chatbot-header">
-    <h3 class="podium-chatbot-name">
+<div *ngIf="showChatWidget" class="quantum-chatbot">
+  <div class="quantum-chatbot-header">
+    <h3 class="quantum-chatbot-name">
       {{widgetConfig.name}}
     </h3>
-    <div class="podium-chatbot-status">
+    <div class="quantum-chatbot-status">
       <!-- Online
-      <span class="podium-chatbot-status-online">●</span> -->
-     <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>
+      <span class="quantum-chatbot-status-online">●</span> -->
+     <button class="quantum-chat-button-header" (click)="showChatWidget=false">✕</button>
     </div>
   </div>
 
-  <div class="podium-chatbot-chat" id="podium-chat-scrollable-container">
+  <div class="quantum-chatbot-chat" id="quantum-chat-scrollable-container">
     <div class="chat-message-bottom" #bottom></div>
     <ng-container *ngFor="let message of messages">
-      <div [class.podium-received-message-container]="message.type === 'received'"
-           [class.podium-sent-message-container]="message.type === 'sent'">
+      <div [class.quantum-received-message-container]="message.type === 'received'"
+           [class.quantum-sent-message-container]="message.type === 'sent'">
         <img *ngIf="message.type === 'received'"
-             [attr.src]="widgetConfig.logo" class="podium-chatbot-avatar podium-chat-message-from-avatar"
+             [attr.src]="widgetConfig.logo" class="quantum-chatbot-avatar quantum-chat-message-from-avatar"
         >
-        <div class="podium-chat-message" [class.podium-chat-message-received]="message.type === 'received'"
-             [class.podium-chat-message-sent]="message.type === 'sent'">
+        <div class="quantum-chat-message" [class.quantum-chat-message-received]="message.type === 'received'"
+             [class.quantum-chat-message-sent]="message.type === 'sent'">
           <img *ngIf="message.text==='...'" src="assets/typing.gif" alt="Typing" height="30">
-          <div *ngIf="message.text!=='...'" class="podium-chat-message-text" [innerHTML]="message.text">
+          <div *ngIf="message.text!=='...'" class="quantum-chat-message-text" [innerHTML]="message.text">
           </div>
         </div>
       </div>
@@ -39,16 +39,16 @@
   </div>
 
   <!--Footer-->
-  <div class="podium-chatbot-footer">
-    <input type="text" class="podium-chat-input-text" placeholder="Type message..." #message
+  <div class="quantum-chatbot-footer">
+    <input type="text" class="quantum-chat-input-text" placeholder="Type message..." #message
            (keyup.enter)="sendMessage(message.value, message)">
-    <span class="podium-chat-submit" (click)="sendMessage(message.value, message)">
+    <span class="quantum-chat-submit" (click)="sendMessage(message.value, message)">
         Send
       </span>
   </div>
 </div>
 
-<button *ngIf="!showChatWidget" class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
+<button *ngIf="!showChatWidget" class="quantum-chat-button" (click)="showChatWidget=!showChatWidget">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
 </button>
