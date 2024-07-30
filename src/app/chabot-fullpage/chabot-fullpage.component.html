@@ -13,7 +13,7 @@
   </div>
 
   <div class="quantum-chatbot-chat" id="quantum-chat-scrollable-container"
-    [ngStyle]="{ borderColor: widgetConfig.borderColor, color: widgetConfig.chatAreaBackgroundColor }">
+    [ngStyle]="{ borderColor: widgetConfig.borderColor, backgroundColor: widgetConfig.chatAreaBackgroundColor }">
     <div class="chat-message-bottom" #bottom></div>
     <ng-container *ngFor="let message of messages">
       <div [class.quantum-received-message-container]="message.type === 'received'"
