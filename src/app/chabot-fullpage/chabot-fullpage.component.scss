@@ -8,8 +8,6 @@
 /*Header*/
 
 .quantum-chatbot-header {
-  background-color: #bd24fa;
-  color: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -48,7 +46,6 @@
 
 .quantum-chat-button-header {
   font-weight: bold;
-  color: #fff;
   border: 1px solid #fff;
   border-radius: 50%;
   background-color: inherit;
@@ -70,7 +67,7 @@
   max-height: calc(100vh - 160px);
   flex: 1;
   background: #ffffff;
-  border:1px solid#bd24fa;
+  border:1px solid;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -104,12 +101,6 @@
 .quantum-chat-message-sent {
   align-self: flex-end;
   border-radius: 15px 15px 0;
-  background-color: #e4e4e4;
-}
-
-
-.quantum-chat-message-sent .quantum-chat-message-text {
-  color: #bd24fa;
 }
 
 /**
@@ -123,13 +114,11 @@ Received message style
 
 .quantum-chat-message-received {
   border-radius: 15px 15px 15px 0;
-  background-color: #bd24fa;
 
   //margin-left: 25px;
 }
 
 .quantum-chat-message-received .quantum-chat-message-text {
-  color: #ffffff;
   a {
     color: #38B6FF !important;
   }
@@ -149,9 +138,7 @@ Received message style
 /*Footer area*/
 
 .quantum-chatbot-footer {
-  background-color: #bd24fa;
   height: 50px;
-  color: #fff;
   padding: 10px 20px 10px 10px;
   position: fixed;
   bottom: 0;
@@ -213,11 +200,9 @@ Received message style
   align-items: center;
   bottom: 0;
   right: 2px;
-  background: #bd24fa;
   border-radius: 50%;
   border: none !important;
   outline: none;
-  color: #fff;
   font-size: 32px;
   cursor: pointer;
   z-index: 2147483646;

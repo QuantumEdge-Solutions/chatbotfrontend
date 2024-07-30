@@ -1,5 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+interface WidgetConfig {
+  name: string,
+  logo: string,
+  primaryColor: string,
+  borderColor: string,
+  sendChatBackgroundColor: string,
+  sendChatTextColor: string,
+  receiveChatTextColor: string,
+  headerBackgroundColor: string,
+  headerTextColor: string,
+  FooterBackgroundColor: string,
+  FooterTextColor: string,
+  BotButtonBackgroundColor: string,
+  BotButtonIconColor: string,
+}
+
 @Component({
   selector: 'app-chabot-fullpage',
   templateUrl: './chabot-fullpage.component.html',
@@ -7,10 +23,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChabotFullpageComponent implements OnInit {
 
-  widgetConfig: { name: string, logo: string, primaryColor: string } = {
+  widgetConfig: WidgetConfig = {
     name: 'Quantum Bot',
     logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
-    primaryColor: '#bd24fa'
+    primaryColor: '#bd24fa',
+    borderColor: '#bd24fa',
+    sendChatBackgroundColor: '#e4e4e4',
+    sendChatTextColor: '#bd24fa',
+    receiveChatTextColor: '#FFFFFF',
+    headerBackgroundColor: '#bd24fa',
+    headerTextColor: '#FFFFFF',
+    FooterBackgroundColor: '#bd24fa',
+    FooterTextColor: '#FFFFFF',
+    BotButtonBackgroundColor: '#bd24fa',
+    BotButtonIconColor: '#FFFFFF',
   }; // Default config
   showChatWidget = false;
   messages: any[] = [];
@@ -107,7 +133,17 @@ export class ChabotFullpageComponent implements OnInit {
       this.widgetConfig = {
         name: 'Quantum Bot',
         logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
-        primaryColor: '#bd24fa'
+        primaryColor: '#bd24fa',
+        borderColor: '#bd24fa',
+        sendChatBackgroundColor: '#e4e4e4',
+        sendChatTextColor: '#bd24fa',
+        receiveChatTextColor: '#FFFFFF',
+        headerBackgroundColor: '#bd24fa',
+        headerTextColor: '#FFFFFF',
+        FooterBackgroundColor: '#bd24fa',
+        FooterTextColor: '#FFFFFF',
+        BotButtonBackgroundColor: '#bd24fa',
+        BotButtonIconColor: '#FFFFFF',
       }
     }
     // Add other clients config here
