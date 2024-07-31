@@ -1,26 +1,26 @@
-<div class="podium-chat-box" *ngIf="showChatWidget">
+<div *ngIf="showChatWidget" class="podium-chat-box">
   <div class="podium-chat-box-header">
     <h3 class="podium-chatbot-name">
-      {{widgetConfig.name}}
+      {{ widgetConfig.name }}
     </h3>
     <div class="podium-chatbot-status">
       Online
       <span class="podium-chatbot-status-online">●</span>
-      <button class="podium-chat-button-header" (click)="showChatWidget=false">✕</button>
+      <button (click)="showChatWidget=false" class="podium-chat-button-header">✕</button>
     </div>
   </div>
   <div class="podium-chat-box-container" id="podium-chat-scrollable-container">
-    <div class="chat-message-bottom" #bottom></div>
+    <div #bottom class="chat-message-bottom"></div>
     <ng-container *ngFor="let message of messages">
       <div [class.podium-received-message-container]="message.type === 'received'"
            [class.podium-sent-message-container]="message.type === 'sent'">
         <img *ngIf="message.type === 'received'"
              [attr.src]="widgetConfig.logo" class="podium-chatbot-avatar podium-chat-message-from-avatar"
         >
-        <div class="podium-chat-message" [class.podium-chat-message-received]="message.type === 'received'"
-             [class.podium-chat-message-sent]="message.type === 'sent'">
-          <img *ngIf="message.text==='...'" src="assets/typing.gif" alt="Typing" height="30">
-          <div *ngIf="message.text!=='...'" class="podium-chat-message-text" [innerHTML]="message.text">
+        <div [class.podium-chat-message-received]="message.type === 'received'" [class.podium-chat-message-sent]="message.type === 'sent'"
+             class="podium-chat-message">
+          <img *ngIf="message.text==='...'" alt="Typing" height="30" src="assets/typing.gif">
+          <div *ngIf="message.text!=='...'" [innerHTML]="message.text" class="podium-chat-message-text">
           </div>
         </div>
       </div>
@@ -37,14 +37,14 @@
     </ng-container>
   </div>
   <div class="podium-chat-box-footer">
-    <input type="text" class="podium-chat-input-text" placeholder="Type message..." #message
-           (keyup.enter)="sendMessage(message.value, message)">
-    <span class="podium-chat-submit" (click)="sendMessage(message.value, message)">
+    <input #message (keyup.enter)="sendMessage(message.value, message)" class="podium-chat-input-text" placeholder="Type message..."
+           type="text">
+    <span (click)="sendMessage(message.value, message)" class="podium-chat-submit">
         Send
       </span>
   </div>
 </div>
-<button class="podium-chat-button" (click)="showChatWidget=!showChatWidget">
+<button (click)="showChatWidget=!showChatWidget" class="podium-chat-button">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
 </button>
