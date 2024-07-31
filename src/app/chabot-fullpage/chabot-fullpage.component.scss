@@ -128,25 +128,25 @@ Received message style
 /*Footer area*/
 
 .quantum-chatbot-footer {
-  height: 50px;
-  padding: 10px 20px 10px 10px;
+  height: 60px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
 .quantum-chat-input-text {
   padding-left: 10px;
-  height: 25px;
+  height: 35px;
   width: 90%;
-  border: 0;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
   resize: none;
-  border: none;
   overflow: auto;
   outline: none;
   box-shadow: none;
@@ -176,7 +176,9 @@ Received message style
   font-size: 16px;
   border: 0;
   outline: none;
-  margin-right: 10px;
+  position: absolute;
+  right: 30px;
+  margin-top: 11px
 }
 
 
