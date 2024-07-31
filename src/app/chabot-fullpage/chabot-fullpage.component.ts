@@ -132,6 +132,14 @@ export class ChabotFullpageComponent implements OnInit {
     this.messages = [];
   }
 
+  openWidget() {
+    this.showChatWidget=!this.showChatWidget;
+    setTimeout(() => {
+      document.getElementById('quantum-bot-chat-area')?.focus();
+    }, 100);
+
+  }
+
   getClientConfig(client: string) {
     // get client config from backend
 

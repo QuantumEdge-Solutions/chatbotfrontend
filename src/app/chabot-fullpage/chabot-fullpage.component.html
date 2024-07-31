@@ -45,15 +45,15 @@
   <!--Footer-->
   <div class="quantum-chatbot-footer"
     [ngStyle]="{ backgroundColor: widgetConfig.FooterBackgroundColor, color: widgetConfig.FooterTextColor }">
-    <input type="text" class="quantum-chat-input-text" placeholder="Type message..." #message
+    <input id="quantum-bot-chat-area" type="text" class="quantum-chat-input-text" placeholder="Type message..." #message
       (keyup.enter)="sendMessage(message.value, message)" autofocus>
     <span class="quantum-chat-submit" (click)="sendMessage(message.value, message)">
-      Send
+      <i class="pi pi-send"></i>
     </span>
   </div>
 </div>
 
-<button *ngIf="!showChatWidget" class="quantum-chat-button" (click)="showChatWidget=!showChatWidget"
+<button *ngIf="!showChatWidget" class="quantum-chat-button" (click)="openWidget()"
   [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
