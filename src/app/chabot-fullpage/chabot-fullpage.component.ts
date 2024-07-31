@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 interface WidgetConfig {
   name: string,
@@ -133,7 +133,7 @@ export class ChabotFullpageComponent implements OnInit {
   }
 
   openWidget() {
-    this.showChatWidget=!this.showChatWidget;
+    this.showChatWidget = !this.showChatWidget;
     setTimeout(() => {
       document.getElementById('quantum-bot-chat-area')?.focus();
     }, 100);
