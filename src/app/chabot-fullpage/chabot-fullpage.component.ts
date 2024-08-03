@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 interface WidgetConfig {
   name: string,
@@ -107,7 +107,7 @@ export class ChabotFullpageComponent implements OnInit {
       if (xmlhttp.readyState === 4) {
         console.log('Request is closed.');
         that.processingAnswer = false;
-        if(that.messages[that.messages.length - 1].text === '...'){
+        if (that.messages[that.messages.length - 1].text === '...') {
           that.renderErrorResponse();
         }
       }
@@ -117,14 +117,14 @@ export class ChabotFullpageComponent implements OnInit {
   }
 
   updateAnswer = (oEvent: any) => {
-    /* console.log('messages', this.messages);
-     console.log('os event', oEvent);
-     console.log('os event', oEvent.target.responseText);
-     console.log('os event', oEvent.total);*/
-    const jsonArrayString = "[" + oEvent.target.responseText.replace(/}{/g, "},{") + "]";
-    const jsonArray = JSON.parse(jsonArrayString);
-    const contentValues = jsonArray.map((item: { content: any; }) => item.content);
-    let answer = contentValues.join('');
+    console.log('os event', oEvent);
+    console.log('os event', oEvent.target.responseText);
+    console.log('os event', oEvent.total);
+    //const jsonArrayString = "[" + oEvent.target.responseText.replace(/}{/g, "},{") + "]";
+    // const jsonArray = JSON.parse(jsonArrayString);
+    // const contentValues = jsonArray.map((item: { content: any; }) => item.content);
+    // let answer = contentValues.join('');
+    let answer = oEvent.target.responseText;
     // console.log('answer--', answer);
     answer = `${answer.replace(/\n/g, '<br>')}`;
     this.messages.pop();
