@@ -159,6 +159,7 @@ export class ChabotFullpageComponent implements OnInit {
   }
 
   resetChat() {
+    this.processingAnswer = false;
     this.messages = [];
   }
 
