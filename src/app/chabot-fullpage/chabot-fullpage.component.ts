@@ -3,6 +3,8 @@ import {Component, OnInit} from '@angular/core';
 interface WidgetConfig {
   name: string,
   logo: string,
+  welcomeMessage: string,
+  FAQs: any[],
   primaryColor: string,
   borderColor: string,
   sendChatBackgroundColor: string,
@@ -27,6 +29,8 @@ export class ChabotFullpageComponent implements OnInit {
   widgetConfig: WidgetConfig = {
     name: 'Quantum Bot',
     logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
+    welcomeMessage: 'Hey! how can I help you?',
+    FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
     primaryColor: '#4b0f63',
     borderColor: '#4b0f63',
     sendChatBackgroundColor: '#e4e4e4',
@@ -80,7 +84,7 @@ export class ChabotFullpageComponent implements OnInit {
     };
     const that = this;
     const xmlhttp = new XMLHttpRequest();
-    const baseUrl = 'https://ask-al-staging.brownleefitness.com/answer_chunked/'; //REplace with our backend url
+    const baseUrl = 'https://ask-al-staging.brownleefitness.com/answer_chunked/'; //Replace with our backend url
 
     // Ensure question and loggedInUser are properly sanitized and validated
     const encodedQuestion = encodeURIComponent(question);
@@ -147,6 +151,8 @@ export class ChabotFullpageComponent implements OnInit {
       this.widgetConfig = {
         name: 'Quantum Bot',
         logo: `assets/IconOnly_Transparent.png`,
+        welcomeMessage: 'Hey! how can I help you?',
+        FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
         primaryColor: '#4b0f63',
         borderColor: '#4b0f63',
         sendChatBackgroundColor: '#e4e4e4',

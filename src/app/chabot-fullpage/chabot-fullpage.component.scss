@@ -199,3 +199,18 @@ Received message style
   cursor: pointer;
   z-index: 2147483646;
 }
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  align-items: center;
+}
+
+.faq-button {
+  background: transparent;
+  border-radius: 15px;
+  padding: 7px;
+  border: 1px solid;
+  cursor: pointer;
+}

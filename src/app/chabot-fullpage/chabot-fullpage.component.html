@@ -1,4 +1,5 @@
 <div *ngIf="showChatWidget" class="quantum-chatbot">
+  <!--Header-->
   <div [ngStyle]="{ backgroundColor: widgetConfig.primaryColor, color: widgetConfig.headerTextColor }"
        class="quantum-chatbot-header">
     <div class="quantum-chatbot-name">
@@ -12,36 +13,16 @@
     </div>
   </div>
 
+  <!--Chat Area-->
   <div [ngStyle]="{ borderColor: widgetConfig.borderColor, backgroundColor: widgetConfig.chatAreaBackgroundColor }"
        class="quantum-chatbot-chat"
        id="quantum-chat-scrollable-container">
     <div #bottom class="chat-message-bottom"></div>
-    <ng-container *ngFor="let message of messages">
-      <div [class.quantum-received-message-container]="message.type === 'received'"
-           [class.quantum-sent-message-container]="message.type === 'sent'">
-        <img *ngIf="message.type === 'received'" [attr.src]="widgetConfig.logo"
-             class="quantum-chatbot-avatar quantum-chat-message-from-avatar">
-        <div [class.quantum-chat-message-received]="message.type === 'received'"
-             [class.quantum-chat-message-sent]="message.type === 'sent'"
-             [ngStyle]="{ backgroundColor: message.type === 'sent' ? widgetConfig.sendChatBackgroundColor : widgetConfig.primaryColor }"
-             class="quantum-chat-message">
-          <img *ngIf="message.text==='...'" alt="Typing" height="20" src="assets/typing.gif">
-          <div *ngIf="message.text!=='...'" [innerHTML]="message.text"
-               [ngStyle]="{ color: message.type === 'sent' ? widgetConfig.sendChatTextColor : widgetConfig.receiveChatTextColor }"
-               class="quantum-chat-message-text">
-          </div>
-        </div>
-      </div>
-      <!-- <div class="css-0">
-         <div class="css-j7qwjs">
-           <div class="css-1xhj18k">
-             <div class="css-17xejub"></div>
-             <div class="chakra-stack css-1i2407o">
-               <div class="css-l9b527"><span class="css-1kxrhf3">helldsahhhhhhhhhhhhhhh hjadsdhsa dhabdsjsa dhb daso</span></div>
-             </div>
-           </div>
-         </div>
-       </div>-->
+    <ng-container *ngIf="messages.length>0">
+      <ng-container *ngTemplateOutlet="chatContainer"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="messages.length===0">
+      <ng-container *ngTemplateOutlet="initialWelcomeContainer"></ng-container>
     </ng-container>
   </div>
 
@@ -55,12 +36,14 @@
       <i class="pi pi-send"></i>
     </span>
     <div style="font-size: 10px;margin-top: 10px;width: 100%;text-align: center;">Powered By <a class="cursor-pointer"
-                                                                                                target="_blank"
                                                                                                 href="https://quantumedge.netlify.app/"
-                                                                                                style="text-decoration: underline">Quantum
+                                                                                                style="text-decoration: underline"
+                                                                                                target="_blank">Quantum
       edge</a></div>
   </div>
 </div>
+
+<!--Widget open button-->
 
 <button (click)="openWidget()" *ngIf="!showChatWidget"
         [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }"
@@ -68,3 +51,54 @@
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
 </button>
+
+
+<ng-template #chatContainer>
+  <ng-container *ngFor="let message of messages">
+    <div [class.quantum-received-message-container]="message.type === 'received'"
+         [class.quantum-sent-message-container]="message.type === 'sent'">
+      <img *ngIf="message.type === 'received'" [attr.src]="widgetConfig.logo"
+           class="quantum-chatbot-avatar quantum-chat-message-from-avatar">
+      <div [class.quantum-chat-message-received]="message.type === 'received'"
+           [class.quantum-chat-message-sent]="message.type === 'sent'"
+           [ngStyle]="{ backgroundColor: message.type === 'sent' ? widgetConfig.sendChatBackgroundColor : widgetConfig.primaryColor }"
+           class="quantum-chat-message">
+        <img *ngIf="message.text==='...'" alt="Typing" height="20" src="assets/typing.gif">
+        <div *ngIf="message.text!=='...'" [innerHTML]="message.text"
+             [ngStyle]="{ color: message.type === 'sent' ? widgetConfig.sendChatTextColor : widgetConfig.receiveChatTextColor }"
+             class="quantum-chat-message-text">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #initialWelcomeContainer>
+  <div class="quantum-received-message-container">
+    <img [attr.src]="widgetConfig.logo"
+         class="quantum-chatbot-avatar quantum-chat-message-from-avatar">
+    <div [ngStyle]="{ backgroundColor: widgetConfig.primaryColor }"
+         class="quantum-chat-message quantum-chat-message-received">
+      <div [innerHTML]="widgetConfig.welcomeMessage"
+           [ngStyle]="{ color: widgetConfig.receiveChatTextColor }"
+           class="quantum-chat-message-text">
+      </div>
+    </div>
+  </div>
+  <div class="faq-container" style="margin-top: 35px">
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+            class="faq-button">{{ widgetConfig.FAQs[0] }}
+    </button>
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+            class="faq-button">{{ widgetConfig.FAQs[1] }}
+    </button>
+  </div>
+  <div class="faq-container" style="margin-top: 10px">
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+            class="faq-button">{{ widgetConfig.FAQs[2] }}
+    </button>
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+            class="faq-button">{{ widgetConfig.FAQs[3] }}
+    </button>
+  </div>
+</ng-template>
