@@ -20,8 +20,8 @@ interface WidgetConfig {
   BotButtonIconColor: string,
 }
 
-const STAGING_BACKEND_URL = 'https://chatbot-backend-1-cq8l.onrender.com/';
-const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com/';
+const STAGING_BACKEND_URL = 'https://chatbot-backend-1-cq8l.onrender.com/query';
+const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com';
 
 @Component({
   selector: 'app-chabot-fullpage',
@@ -91,22 +91,15 @@ export class ChabotFullpageComponent implements OnInit {
   }
 
   fetchAnswer(question: string) {
-    const loggedInUser = {
-      loginEmail: 'm.saeedarshad95@gmail.com',
-      contactDetails: {
-        firstName: 'Saeed'
-      }
-    };
     const that = this;
     const xmlhttp = new XMLHttpRequest();
     const baseUrl = STAGING_BACKEND_URL; //Replace with our backend url
 
     // Ensure question and loggedInUser are properly sanitized and validated
     const encodedQuestion = encodeURIComponent(question);
-    const encodedUser = encodeURIComponent(JSON.stringify(loggedInUser));
 
     // Construct the final URL
-    const url = `${baseUrl}?question=${encodedQuestion}&memberdata=${encodedUser}`;
+    const url = `${baseUrl}?message=${encodedQuestion}`;
 
     xmlhttp.removeEventListener('progress', this.updateAnswer, false);
     xmlhttp.addEventListener('progress', this.updateAnswer, false);
