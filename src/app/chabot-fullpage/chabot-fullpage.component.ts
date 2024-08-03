@@ -19,6 +19,9 @@ interface WidgetConfig {
   BotButtonIconColor: string,
 }
 
+const STAGING_BACKEND_URL = 'https://chatbot-backend-1-cq8l.onrender.com/';
+const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com/';
+
 @Component({
   selector: 'app-chabot-fullpage',
   templateUrl: './chabot-fullpage.component.html',
@@ -84,7 +87,7 @@ export class ChabotFullpageComponent implements OnInit {
     };
     const that = this;
     const xmlhttp = new XMLHttpRequest();
-    const baseUrl = 'https://ask-al-staging.brownleefitness.com/answer_chunked/'; //Replace with our backend url
+    const baseUrl = STAGING_BACKEND_URL; //Replace with our backend url
 
     // Ensure question and loggedInUser are properly sanitized and validated
     const encodedQuestion = encodeURIComponent(question);
