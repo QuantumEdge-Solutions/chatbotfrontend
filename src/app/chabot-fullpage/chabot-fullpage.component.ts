@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 interface WidgetConfig {
   name: string,
@@ -25,7 +26,18 @@ const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com/';
 @Component({
   selector: 'app-chabot-fullpage',
   templateUrl: './chabot-fullpage.component.html',
-  styleUrls: ['./chabot-fullpage.component.scss']
+  styleUrls: ['./chabot-fullpage.component.scss'],
+  animations: [
+    trigger('toggleChatWidget', [
+      state(
+        'void',
+        style({
+          opacity: 0,
+        }),
+      ),
+      transition('void <=> *', animate(500)),
+    ])
+  ]
 })
 export class ChabotFullpageComponent implements OnInit {
 

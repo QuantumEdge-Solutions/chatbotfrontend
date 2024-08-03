@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {ChatWidgetComponent} from "./chat-widget/chat-widget.component";
 import { ChabotDemoComponent } from './chabot-demo/chabot-demo.component';
 import { ChabotFullpageComponent } from './chabot-fullpage/chabot-fullpage.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ChabotFullpageComponent } from './chabot-fullpage/chabot-fullpage.compo
     ChabotFullpageComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     ChatWidgetComponent,

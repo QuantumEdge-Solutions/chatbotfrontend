@@ -1,4 +1,4 @@
-<div *ngIf="showChatWidget" class="quantum-chatbot">
+<div *ngIf="showChatWidget" class="quantum-chatbot" [@toggleChatWidget]>
   <!--Header-->
   <div [ngStyle]="{ backgroundColor: widgetConfig.primaryColor, color: widgetConfig.headerTextColor }"
        class="quantum-chatbot-header">
@@ -45,7 +45,7 @@
 
 <!--Widget open button-->
 
-<button (click)="openWidget()" *ngIf="!showChatWidget"
+<button (click)="openWidget()" *ngIf="!showChatWidget" [@toggleChatWidget]
         [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }"
         class="quantum-chat-button">
   <span *ngIf="showChatWidget">✕</span>
