@@ -55,7 +55,7 @@ export class ChabotFullpageComponent implements OnInit {
 
 
   sendMessage(question: any, event: any) {
-    if (this.processingAnswer) {
+    if (this.processingAnswer || !question) {
       return;
     }
     event.value = '';
@@ -99,6 +99,9 @@ export class ChabotFullpageComponent implements OnInit {
       if (xmlhttp.readyState === 4) {
         console.log('Request is closed.');
         that.processingAnswer = false;
+        if(that.messages[that.messages.length - 1].text === '...'){
+          that.renderErrorResponse();
+        }
       }
     });
     xmlhttp.open('get', url, true);
@@ -123,6 +126,14 @@ export class ChabotFullpageComponent implements OnInit {
     });
     this.handleScroll();
     requestAnimationFrame(this.handleScroll);
+  }
+
+  renderErrorResponse() {
+    this.messages.pop();
+    this.messages.push({
+      text: 'Our servers are currently down. Please try again later.',
+      type: 'received'
+    });
   }
 
   handleScroll() {
