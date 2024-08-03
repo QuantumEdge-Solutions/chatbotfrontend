@@ -12,7 +12,8 @@
     </div>
   </div>
 
-  <div [ngStyle]="{ borderColor: widgetConfig.borderColor, backgroundColor: widgetConfig.chatAreaBackgroundColor }" class="quantum-chatbot-chat"
+  <div [ngStyle]="{ borderColor: widgetConfig.borderColor, backgroundColor: widgetConfig.chatAreaBackgroundColor }"
+       class="quantum-chatbot-chat"
        id="quantum-chat-scrollable-container">
     <div #bottom class="chat-message-bottom"></div>
     <ng-container *ngFor="let message of messages">
@@ -20,11 +21,13 @@
            [class.quantum-sent-message-container]="message.type === 'sent'">
         <img *ngIf="message.type === 'received'" [attr.src]="widgetConfig.logo"
              class="quantum-chatbot-avatar quantum-chat-message-from-avatar">
-        <div [class.quantum-chat-message-received]="message.type === 'received'" [class.quantum-chat-message-sent]="message.type === 'sent'"
+        <div [class.quantum-chat-message-received]="message.type === 'received'"
+             [class.quantum-chat-message-sent]="message.type === 'sent'"
              [ngStyle]="{ backgroundColor: message.type === 'sent' ? widgetConfig.sendChatBackgroundColor : widgetConfig.primaryColor }"
              class="quantum-chat-message">
           <img *ngIf="message.text==='...'" alt="Typing" height="20" src="assets/typing.gif">
-          <div *ngIf="message.text!=='...'" [innerHTML]="message.text" [ngStyle]="{ color: message.type === 'sent' ? widgetConfig.sendChatTextColor : widgetConfig.receiveChatTextColor }"
+          <div *ngIf="message.text!=='...'" [innerHTML]="message.text"
+               [ngStyle]="{ color: message.type === 'sent' ? widgetConfig.sendChatTextColor : widgetConfig.receiveChatTextColor }"
                class="quantum-chat-message-text">
           </div>
         </div>
@@ -45,16 +48,22 @@
   <!--Footer-->
   <div [ngStyle]="{ backgroundColor: widgetConfig.FooterBackgroundColor, color: widgetConfig.FooterTextColor }"
        class="quantum-chatbot-footer">
-    <input #message (keyup.enter)="sendMessage(message.value, message)" autofocus class="quantum-chat-input-text" id="quantum-bot-chat-area"
+    <input #message (keyup.enter)="sendMessage(message.value, message)" autofocus class="quantum-chat-input-text"
+           id="quantum-bot-chat-area"
            placeholder="Type message..." type="text">
     <span (click)="sendMessage(message.value, message)" class="quantum-chat-submit">
       <i class="pi pi-send"></i>
     </span>
-    <div style="font-size: 10px;margin-top: 10px;width: 100%;text-align: center;">Powered By Quantum edge</div>
+    <div style="font-size: 10px;margin-top: 10px;width: 100%;text-align: center;">Powered By <a class="cursor-pointer"
+                                                                                                target="_blank"
+                                                                                                href="https://quantumedge.netlify.app/"
+                                                                                                style="text-decoration: underline">Quantum
+      edge</a></div>
   </div>
 </div>
 
-<button (click)="openWidget()" *ngIf="!showChatWidget" [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }"
+<button (click)="openWidget()" *ngIf="!showChatWidget"
+        [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }"
         class="quantum-chat-button">
   <span *ngIf="showChatWidget">✕</span>
   <span *ngIf="!showChatWidget">?</span>
