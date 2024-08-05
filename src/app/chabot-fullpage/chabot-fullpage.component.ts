@@ -145,7 +145,7 @@ export class ChabotFullpageComponent implements OnInit {
   }
 
   handleScroll() {
-    const scrollableDiv = document.getElementById('podium-chat-scrollable-container');
+    const scrollableDiv = document.getElementById('quantum-chat-scrollable-container');
     if (scrollableDiv) {
       scrollableDiv.scrollTop = scrollableDiv.scrollHeight + 10;
     }
