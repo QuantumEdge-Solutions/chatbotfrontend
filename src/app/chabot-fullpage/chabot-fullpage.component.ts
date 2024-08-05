@@ -62,10 +62,11 @@ export class ChabotFullpageComponent implements OnInit {
   showChatWidget = false;
   messages: any[] = [];
   processingAnswer = false;
+  clientId = 'quantum-edge';
 
   ngOnInit(): void {
     // pass the client here: get it from queryparam
-    this.getClientConfig('quantum-edge');
+    this.getClientConfig();
   }
 
 
@@ -97,9 +98,10 @@ export class ChabotFullpageComponent implements OnInit {
 
     // Ensure question and loggedInUser are properly sanitized and validated
     const encodedQuestion = encodeURIComponent(question);
+    const encodedClientId = encodeURIComponent(this.clientId);
 
     // Construct the final URL
-    const url = `${baseUrl}?message=${encodedQuestion}`;
+    const url = `${baseUrl}?message=${encodedQuestion}&client_id=${encodedClientId}`;
 
     xmlhttp.removeEventListener('progress', this.updateAnswer, false);
     xmlhttp.addEventListener('progress', this.updateAnswer, false);
@@ -164,12 +166,12 @@ export class ChabotFullpageComponent implements OnInit {
 
   }
 
-  getClientConfig(client: string) {
+  getClientConfig() {
     // get client config from backend
 
-    if (client === 'quantum-edge') {
+    if (this.clientId === 'quantum-edge') {
       this.widgetConfig = {
-        name: 'Quantum Bot',
+        name: 'Quantum AI Bot',
         logo: `assets/IconOnly_Transparent.png`,
         welcomeMessage: 'Hey! how can I help you?',
         FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
