@@ -42,7 +42,7 @@ const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com';
 export class ChabotFullpageComponent implements OnInit {
 
   widgetConfig: WidgetConfig = {
-    name: 'Quantum Bot',
+    name: 'Quantum AI Bot',
     logo: `https://static.wixstatic.com/media/6e187b_a9d74aeb2d354b7b8a68bbdca47f3db8~mv2.png/v1/fill/w_94,h_94,fp_0.08_0.09,q_85,usm_0.66_1.00_0.01,enc_auto/ask-ai2.png`,
     welcomeMessage: 'Hey! how can I help you?',
     FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
