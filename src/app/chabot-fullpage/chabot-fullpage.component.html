@@ -1,4 +1,4 @@
-<div *ngIf="showChatWidget" class="quantum-chatbot" [@toggleChatWidget]>
+<div *ngIf="showChatWidget" [@toggleChatWidget] class="quantum-chatbot">
   <!--Header-->
   <div [ngStyle]="{ backgroundColor: widgetConfig.primaryColor, color: widgetConfig.headerTextColor }"
        class="quantum-chatbot-header">
@@ -29,12 +29,15 @@
   <!--Footer-->
   <div [ngStyle]="{ backgroundColor: widgetConfig.FooterBackgroundColor, color: widgetConfig.FooterTextColor }"
        class="quantum-chatbot-footer">
-    <input #message (keyup.enter)="sendMessage(message.value, message)" autofocus class="quantum-chat-input-text"
-           id="quantum-bot-chat-area"
-           placeholder="Type message..." type="text">
-    <span (click)="sendMessage(message.value, message)" class="quantum-chat-submit">
-      <i class="pi pi-send"></i>
-    </span>
+    <div class="quantum-chat-container">
+      <textarea #message (keyup.enter)="sendMessage(message.value, message)" autofocus class="quantum-chat-input-text"
+                id="quantum-bot-chat-area"
+                placeholder="Type message...">
+      </textarea>
+        <span (click)="sendMessage(message.value, message)" class="quantum-chat-submit">
+        <i class="pi pi-send"></i>
+      </span>
+    </div>
     <div style="font-size: 10px;margin-top: 10px;width: 100%;text-align: center;">Powered By <a class="cursor-pointer"
                                                                                                 href="https://quantumedge.netlify.app/"
                                                                                                 style="text-decoration: none !important;"
@@ -86,18 +89,22 @@
     </div>
   </div>
   <div class="faq-container" style="margin-top: 35px">
-    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})"
+            [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
             class="faq-button">{{ widgetConfig.FAQs[0] }}
     </button>
-    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})"
+            [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
             class="faq-button">{{ widgetConfig.FAQs[1] }}
     </button>
   </div>
   <div class="faq-container" style="margin-top: 10px">
-    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})"
+            [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
             class="faq-button">{{ widgetConfig.FAQs[2] }}
     </button>
-    <button (click)="sendMessage(widgetConfig.FAQs[0], {})" [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
+    <button (click)="sendMessage(widgetConfig.FAQs[0], {})"
+            [ngStyle]="{ color: widgetConfig.primaryColor, borderColor: widgetConfig.primaryColor }"
             class="faq-button">{{ widgetConfig.FAQs[3] }}
     </button>
   </div>

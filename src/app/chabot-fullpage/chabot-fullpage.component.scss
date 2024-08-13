@@ -140,33 +140,33 @@ Received message style
   align-items: center;
 }
 
+.quantum-chat-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Full width within the container */
+}
+
 .quantum-chat-input-text {
   padding-left: 10px;
-  height: 35px;
-  width: 90%;
+  padding-right: 40px; /* Ensure text doesn't go under the button */
+  height: 40px;
+  width: 100%; /* Full width within the container */
   border: 1px solid #ffffff;
   border-radius: 15px;
   resize: none;
-  overflow: auto;
+  overflow: hidden; /* Hide scrollbars */
   outline: none;
   box-shadow: none;
   font-size: 14px;
   background-color: inherit;
+  padding-top: 7px;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-.quantum-chat-input-text::-webkit-input-placeholder {
-  color: inherit;
-}
-
-.quantum-chat-input-text::-moz-placeholder {
-  color: inherit;
-}
-
-.quantum-chat-input-text::-ms-input-placeholder {
-  color: inherit;
+  box-sizing: border-box; /* Include padding in width */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  white-space: pre-wrap; /* Maintain formatting and wrap text */
 }
 
 .quantum-chat-submit {
@@ -177,10 +177,8 @@ Received message style
   border: 0;
   outline: none;
   position: absolute;
-  right: 30px;
-  margin-top: 11px
+  right: 10px;
 }
-
 
 /*Chat Button*/
 .quantum-chat-button {
