@@ -27,13 +27,13 @@
   </div>
 
   <!--Footer-->
+
   <div [ngStyle]="{ backgroundColor: widgetConfig.FooterBackgroundColor, color: widgetConfig.FooterTextColor }"
        class="quantum-chatbot-footer">
     <div class="quantum-chat-container">
-      <textarea #message (keyup.enter)="sendMessage(message.value, message)" autofocus class="quantum-chat-input-text"
+      <textarea #message (keyup.enter)="sendMessage(message.value, message)" class="quantum-chat-input-text"
                 id="quantum-bot-chat-area"
-                placeholder="Type message...">
-      </textarea>
+                placeholder="Type message..."></textarea>
         <span (click)="sendMessage(message.value, message)" class="quantum-chat-submit">
         <i class="pi pi-send"></i>
       </span>

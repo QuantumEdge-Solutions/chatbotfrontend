@@ -169,6 +169,22 @@ Received message style
   white-space: pre-wrap; /* Maintain formatting and wrap text */
 }
 
+.quantum-chat-input-text::-webkit-input-placeholder {
+  color: inherit;
+}
+
+.quantum-chat-input-text::-moz-placeholder {
+  color: inherit;
+}
+
+.quantum-chat-input-text::-ms-input-placeholder {
+  color: inherit;
+  box-sizing: border-box; /* Include padding in width */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  white-space: pre-wrap; /* Maintain formatting and wrap text */
+}
+
+
 .quantum-chat-submit {
   cursor: pointer;
   background-color: inherit;
