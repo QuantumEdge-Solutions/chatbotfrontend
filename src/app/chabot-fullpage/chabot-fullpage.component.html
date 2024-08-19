@@ -48,7 +48,7 @@
 
 <!--Widget open button-->
 
-<button (click)="openWidget()" *ngIf="!showChatWidget" [@toggleChatWidget]
+<button (click)="openWidget()" [@toggleChatWidget]
         [ngStyle]="{ backgroundColor: widgetConfig.BotButtonBackgroundColor, color: widgetConfig.BotButtonIconColor }"
         class="quantum-chat-button">
   <span *ngIf="showChatWidget">✕</span>
