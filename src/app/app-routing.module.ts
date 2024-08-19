@@ -5,7 +5,7 @@ import {ChatWidgetComponent} from "./chat-widget/chat-widget.component";
 import {ChabotFullpageComponent} from "./chabot-fullpage/chabot-fullpage.component";
 
 const routes: Routes = [
-  {path: '', component: ChabotFullpageComponent},
+  {path: 'chatbot/:clientId', component: ChabotFullpageComponent},
   {path: 'old', component: ChatWidgetComponent},
   {path: 'demo', component: ChabotDemoComponent},
 ];

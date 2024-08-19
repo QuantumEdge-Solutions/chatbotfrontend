@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ActivatedRoute, Router} from "@angular/router";
 
 interface WidgetConfig {
   name: string,
@@ -63,6 +64,10 @@ export class ChabotFullpageComponent implements OnInit {
   messages: any[] = [];
   processingAnswer = false;
   clientId = 'quantum-edge';
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.clientId  = this.activatedRoute.snapshot.params['clientId'] || this.clientId;
+  }
 
   ngOnInit(): void {
     // pass the client here: get it from queryparam
