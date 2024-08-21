@@ -175,7 +175,7 @@ export class ChabotFullpageComponent implements OnInit {
   getClientConfig() {
     // get client config from backend
 
-    if (this.clientId === 'quantum-edge') {
+    if (this.clientId === 'quantum_edge') {
       this.widgetConfig = {
         name: 'Quantum AI Bot',
         logo: `assets/IconOnly_Transparent.png`,
