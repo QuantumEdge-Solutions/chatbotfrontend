@@ -9,7 +9,7 @@
 
 .quantum-chatbot-header {
   position: fixed;
-  top: 0;
+  top: 15px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -17,11 +17,17 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 12px;
+  border: 1px solid #d6d6d6;
+  border-bottom: none !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .quantum-chatbot-name {
   margin: 0;
   padding: 1px;
+  color: #232A31;
+  font-size: 18px;
 }
 
 .quantum-chatbot-header-actions {
@@ -29,12 +35,23 @@
   // padding: 4px;
 }
 
-
-.quantum-chatbot-avatar {
-  height: 30px;
-  width: 30px;
+.quantum-chatbot-avatar-container {
+  height: 32px;
+  width: 32px;
   border-radius: 50%;
   float: left;
+  position: relative;
+  background: #E7F5F5;
+}
+
+.quantum-chatbot-avatar {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  //border-radius: 50%;
+  // float: left;
 }
 
 .quantum-chat-button-header {
@@ -54,17 +71,17 @@
 /*Chat Area*/
 
 .quantum-chatbot-chat {
-  margin-top: 50px; /* Adjust according to the height of your header */
+  margin-top: 74px; /* Adjust according to the height of your header */
   margin-bottom: 60px; /* Adjust according to the height of your footer */
   overflow-y: auto;
-  max-height: calc(100vh - 230px);
+  max-height: calc(100vh - 262px);
   flex: 1;
-  border: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 1rem;
-  box-shadow: -10px 0 10px -5px rgba(189, 36, 250, 0.3), 10px 0 10px -5px rgba(189, 36, 250, 0.3); /* Left and right shadow */
 }
 
 /*Chat message*/
@@ -77,11 +94,11 @@
   flex-direction: row;
   max-width: 80%;
   word-wrap: break-word;
-  padding: 0.5rem !important;
+  padding: 6px 10px !important;
 }
 
 .quantum-chat-message-text {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 /*Sent message style*/
@@ -92,7 +109,7 @@
 
 .quantum-chat-message-sent {
   align-self: flex-end;
-  border-radius: 15px 15px 0;
+  border-radius: 10px 10px 0;
 }
 
 /**
@@ -105,7 +122,7 @@ Received message style
 }
 
 .quantum-chat-message-received {
-  border-radius: 15px 15px 15px 0;
+  border-radius: 10px 10px 10px 0;
 
   //margin-left: 25px;
 }
@@ -131,13 +148,15 @@ Received message style
   height: 60px;
   padding: 10px;
   position: fixed;
-  bottom: 70px;
+  bottom: 75px;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #d6d6d6;
+  border-top: none !important;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -154,7 +173,7 @@ Received message style
   padding-right: 40px; /* Ensure text doesn't go under the button */
   height: 40px;
   width: 100%; /* Full width within the container */
-  border: 1px solid #ffffff;
+  border: 1px solid #d6d6d6;
   border-radius: 15px;
   resize: none;
   overflow: hidden; /* Hide scrollbars */
@@ -206,27 +225,47 @@ Received message style
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 0;
-  right: 2px;
-  border-radius: 50%;
+  bottom: 10px;
+  right: 5px;
+  border-radius: 30px 30px 6px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 6px rgba(255, 255, 255, 0.3);
   border: none !important;
   outline: none;
   font-size: 32px;
   cursor: pointer;
   z-index: 2147483646;
+  background-color: #fff; /* Adjust as needed */
 }
+
+.quantum-chat-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 -3px 8px rgba(255, 255, 255, 0.4);
+}
+
+.quantum-chat-button-close {
+  border-radius: 30px !important;
+}
+
 
 .faq-container {
   display: flex;
   justify-content: center;
-  gap: 7px;
+  flex-direction: column;
+  gap: 10px;
   align-items: center;
 }
 
 .faq-button {
   background: transparent;
-  border-radius: 15px;
-  padding: 7px;
-  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #E3E5E7;
+  color: #007DA1;
+  font-size: 12px;
   cursor: pointer;
+}
+
+.faq-button:hover {
+  background: #E7F5F5;
+  color: #007DA1;
 }

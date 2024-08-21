@@ -12,6 +12,7 @@ interface WidgetConfig {
   sendChatBackgroundColor: string,
   sendChatTextColor: string,
   receiveChatTextColor: string,
+  receiveChatBackgroundColor: string,
   headerBackgroundColor: string,
   chatAreaBackgroundColor: string,
   headerTextColor: string,
@@ -21,7 +22,7 @@ interface WidgetConfig {
   BotButtonIconColor: string,
 }
 
-const STAGING_BACKEND_URL = 'https://chatbot-backend-1-cq8l.onrender.com/query';
+const STAGING_BACKEND_URL = 'http://localhost:5000/query';
 const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com';
 
 @Component({
@@ -52,6 +53,7 @@ export class ChabotFullpageComponent implements OnInit {
     sendChatBackgroundColor: '#e4e4e4',
     sendChatTextColor: '#4b0f63',
     receiveChatTextColor: '#FFFFFF',
+    receiveChatBackgroundColor: '#4b0f63',
     headerBackgroundColor: '#4b0f63',
     headerTextColor: '#FFFFFF',
     chatAreaBackgroundColor: '#f6f6f6',
@@ -177,20 +179,21 @@ export class ChabotFullpageComponent implements OnInit {
     if (this.clientId === 'quantum-edge') {
       this.widgetConfig = {
         name: 'Quantum AI Bot',
-        logo: `assets/IconOnly_Transparent.png`,
+        logo: `assets/company-icon.png`,
         welcomeMessage: 'Hey! how can I help you?',
         FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
         primaryColor: '#4b0f63',
-        borderColor: '#4b0f63',
-        sendChatBackgroundColor: '#e4e4e4',
-        sendChatTextColor: '#4b0f63',
-        receiveChatTextColor: '#FFFFFF',
-        headerBackgroundColor: '#4b0f63',
-        headerTextColor: '#FFFFFF',
-        chatAreaBackgroundColor: '#f6f6f6',
-        FooterBackgroundColor: '#4b0f63',
-        FooterTextColor: '#FFFFFF',
-        BotButtonBackgroundColor: '#4b0f63',
+        borderColor: '#d6d6d6',
+        sendChatBackgroundColor: '#F3F5F7',
+        sendChatTextColor: '#19232D',
+        receiveChatTextColor: '#232A31',
+        receiveChatBackgroundColor: '#E7F5F5',
+        headerBackgroundColor: '#fafafa',
+        headerTextColor: '#232A31',
+        chatAreaBackgroundColor: '#FFFFFF',
+        FooterBackgroundColor: '#fafafa',
+        FooterTextColor: '#232A31',
+        BotButtonBackgroundColor: '#FFFFFF',
         BotButtonIconColor: '#FFFFFF',
       }
     }
