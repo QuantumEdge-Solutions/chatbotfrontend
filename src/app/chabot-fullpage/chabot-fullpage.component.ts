@@ -64,7 +64,7 @@ export class ChabotFullpageComponent implements OnInit {
   showChatWidget = false;
   messages: any[] = [];
   processingAnswer = false;
-  clientId = 'QuantumEdge';
+  clientId = 'quantum_edge';
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.clientId  = this.activatedRoute.snapshot.params['clientId'] || this.clientId;
