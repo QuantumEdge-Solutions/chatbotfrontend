@@ -21,6 +21,7 @@ interface WidgetConfig {
   BotButtonIconColor: string,
 }
 
+const LOCAL_URL = 'http://127.0.0.1:5000/query'
 const STAGING_BACKEND_URL = 'https://chatbot-backend-1-cq8l.onrender.com/query';
 const PRODUCTION_BACKEND_URL = 'https://chatbot-backend-e50l.onrender.com';
 
@@ -63,7 +64,7 @@ export class ChabotFullpageComponent implements OnInit {
   showChatWidget = false;
   messages: any[] = [];
   processingAnswer = false;
-  clientId = 'quantum-edge';
+  clientId = 'QuantumEdge';
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.clientId  = this.activatedRoute.snapshot.params['clientId'] || this.clientId;
