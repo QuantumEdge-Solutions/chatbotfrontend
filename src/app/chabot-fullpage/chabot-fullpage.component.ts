@@ -183,7 +183,7 @@ export class ChabotFullpageComponent implements OnInit {
         name: 'Quantum AI Bot',
         logo: `assets/company-icon.png`,
         welcomeMessage: 'Hey! how can I help you?',
-        FAQs: ['What do you do?', 'What do you do?', 'What do you do?', 'What do you do?'],
+        FAQs: ['What is Quantum Edge?', 'AI Solutions', 'Development Solutions'],
         primaryColor: '#4b0f63',
         borderColor: '#d6d6d6',
         sendChatBackgroundColor: '#F3F5F7',
