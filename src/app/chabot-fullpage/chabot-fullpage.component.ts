@@ -180,10 +180,10 @@ export class ChabotFullpageComponent implements OnInit {
 
     if (this.clientId === 'quantum_edge') {
       this.widgetConfig = {
-        name: 'Quantum AI Bot',
+        name: '3pointO AI Bot',
         logo: `assets/company-icon.png`,
         welcomeMessage: 'Hey! how can I help you?',
-        FAQs: ['What is Quantum Edge?', 'AI Solutions', 'Development Solutions'],
+        FAQs: ['AI Solutions', 'Development Solutions'],
         primaryColor: '#4b0f63',
         borderColor: '#d6d6d6',
         sendChatBackgroundColor: '#F3F5F7',
